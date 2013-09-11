@@ -1,4 +1,4 @@
-package euler;
+package questions;
 
 import java.util.ArrayList;
 

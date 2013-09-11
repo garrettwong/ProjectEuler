@@ -1,4 +1,4 @@
-package euler;
+package questions;
 
 import java.math.BigInteger;
 
@@ -8,7 +8,5 @@ public class Q13FiftyDigitSum {
 		BigInteger b = new BigInteger("37107287533902102798797998220837590246510135740250");
 		BigInteger c = a.add(b);
 		System.out.println(c);
-		
-		
 	}
 }
