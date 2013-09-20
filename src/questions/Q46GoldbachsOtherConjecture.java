@@ -12,32 +12,47 @@ public class Q46GoldbachsOtherConjecture {
 		
 		long square = 1;
 		long prime = 1;
-		long curNum = 2;
+		long curNum = 1;
 		// Generate Primes and squares
 		while (!found) {
-			if (curNum % 2 ==0 || !isPrime(curNum)) continue;
-			
 			prime = generateNextPrime(prime+1);
+			
 			primesList.put(prime, 1);
 			squaresList.put(square*square,  1);
 			square++;
 			
 			boolean canBe = false;
+			if (!isComposite(curNum) || curNum % 2 == 0) {
+				curNum+= 1;
+				continue;
+			}
 			
 			for( Map.Entry<Long, Integer> entry : primesList.entrySet())  {
-				if (curNum < entry.getKey()) break;
-				if (squaresList.containsKey(curNum - entry.getKey()) ) {
+				if (squaresList.containsKey( (curNum - (entry.getKey()))/2 ) ) {
 					canBe = true;
 					break;
 				}
 			}
-			
+
 			if (!canBe) break;
+			
+			curNum += 1;
 		}
 		System.out.println(curNum);
 		
 	}
 	
+	private static boolean isComposite(long curNum) {
+		if (isPrime(curNum) ) return false;
+		
+		for (int i = 2; i < curNum-1; i++) {
+			if (curNum % i == 0) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	private static Long generateNextPrime(long start) {
 		while (true) {
 			if (isPrime(start)) {
@@ -47,16 +62,14 @@ public class Q46GoldbachsOtherConjecture {
 		}
 	}
 
-	private static boolean isPrime(Long i) {
-        if(i%2 == 0 && i!=2)
-            return false;
-	    else {
-            if(i == 1) return false;
-            for(int p=3;p<=i/2;p+=2){
-                if(i%p == 0)
-                    return false;
-            }
-            return true;
-	    }
+	public static boolean isPrime(long n) {
+		if (n == 2 || n == 3) return true;
+		
+		if (n % 2 == 0) return false;
+		
+		for (int i = 3; i < (n/2) + 1; i=i+2) {
+			if ( n % i == 0) return false;
+		}
+		return true;
 	}
 }

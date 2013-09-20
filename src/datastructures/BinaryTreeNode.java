@@ -40,7 +40,7 @@ public class BinaryTreeNode<Key, E> implements TreeNode<E> {
 	}
 	public void setRight(E v) { element = v; }
 	
-	@Override
+	
 	public boolean isLeaf() {
 		return (left == null) && (right == null);
 	}

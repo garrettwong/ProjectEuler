@@ -46,49 +46,49 @@ public class ArrList<E> implements List<E> {
 		return it;
 	}
 
-	@Override
+	
 	public void moveToStart() {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
+	
 	public void moveToEnd() {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
+	
 	public void prev() {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
+	
 	public void next() {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
+	
 	public int length() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	@Override
+	
 	public int currPos() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	@Override
+	
 	public void moveToPos(int pos) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
+	
 	public E getValue() {
 		// TODO Auto-generated method stub
 		return null;

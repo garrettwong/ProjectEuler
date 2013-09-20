@@ -17,19 +17,19 @@ public class ArrayQueue<E> implements Queue<E> {
 		listArray = (E[]) new Object[maxSize];
 	}
 	
-	@Override
+	
 	public void clear() {
 		rear = 0; front = 1;
 	}
 
-	@Override
+	
 	public void enqueue(E it) {
 		assert ((rear+2) % maxSize) != front : "Queue is full";
 		rear = (rear+1) % maxSize; // Circular
 		listArray[rear] = it;
 	}
 
-	@Override
+	
 	public E dequeue() {
 		assert length() != 0 : "Queue is empty";
 		E it = listArray[front];
@@ -37,13 +37,13 @@ public class ArrayQueue<E> implements Queue<E> {
 		return it;
 	}
 
-	@Override
+	
 	public E front() {
 		assert length() != 0: "Queue is empty";
 		return listArray[front];
 	}
 
-	@Override
+	
 	public int length() {
 		return ((rear+maxSize) - front + 1) % maxSize;
 	}
